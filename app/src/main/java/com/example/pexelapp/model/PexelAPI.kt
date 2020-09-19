@@ -11,7 +11,7 @@ const val API_KEY = "563492ad6f91700001000001b9f19510c5f7423291311abee24b91e4"
 interface PexelAPI {
 
     @GET("v1/search")
-    fun searchPhotoByQuery(
+    fun getPhotos(
         @Query("query") query: String,
         @Query("page") page: Int,
         @Query("per_page") perPage: Int = STANDARD_PAGE_SIZE,
