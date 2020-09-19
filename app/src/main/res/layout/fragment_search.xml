@@ -29,13 +29,6 @@
 
         </LinearLayout>
 
-<!--        <com.greylabsdev.pexwalls.presentation.view.PlaceholderView-->
-<!--            android:visibility="gone"-->
-<!--            android:id="@+id/placeholder_view"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_gravity="center"/>-->
-
     </FrameLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
