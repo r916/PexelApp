@@ -32,7 +32,7 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
             when(response) {
                 is Resource.Success -> {
                     response.data?.let {searchResponse ->
-                        searchAdapter.differ.submitList(searchResponse.pexels)
+                        searchAdapter.differ.submitList(searchResponse.photos)
                         Log.e("SearchFragmearchPixels","$searchResponse")
                     }
                 }

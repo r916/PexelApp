@@ -8,19 +8,19 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.pexelapp.R
-import com.example.pexelapp.model.Pexels
+import com.example.pexelapp.model.Photo
 import kotlinx.android.synthetic.main.item_photo_in_grid.view.*
 
 class SearchAdapter : RecyclerView.Adapter<SearchAdapter.ImageViewHolder>() {
 
     inner class ImageViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
 
-    private val differCallBack = object : DiffUtil.ItemCallback<Pexels>() {
-        override fun areItemsTheSame(oldItem: Pexels, newItem: Pexels): Boolean {
+    private val differCallBack = object : DiffUtil.ItemCallback<Photo>() {
+        override fun areItemsTheSame(oldItem: Photo, newItem: Photo): Boolean {
             return oldItem.url == newItem.url
         }
 
-        override fun areContentsTheSame(oldItem: Pexels, newItem: Pexels): Boolean {
+        override fun areContentsTheSame(oldItem: Photo, newItem: Photo): Boolean {
             return oldItem == newItem
         }
     }
