@@ -7,6 +7,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pexelapp.R
 import com.example.pexelapp.adapter.SearchAdapter
 import com.example.pexelapp.util.Resource
@@ -25,12 +26,14 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as MainActivity).viewModel
         setupRecyclerView()
+        Log.e("OnViewCreatedFragment", "onviewcreated")
 
         viewModel.searchPexels.observe(viewLifecycleOwner, Observer { response ->
             when(response) {
                 is Resource.Success -> {
                     response.data?.let {searchResponse ->
-                        searchAdapter.differ.submitList(searchResponse.list)
+                        searchAdapter.differ.submitList(searchResponse.pexels)
+                        Log.e("SearchFragmearchPixels","$searchResponse")
                     }
                 }
                 is Resource.Error -> {

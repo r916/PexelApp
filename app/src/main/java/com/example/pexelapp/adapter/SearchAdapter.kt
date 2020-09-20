@@ -1,6 +1,5 @@
 package com.example.pexelapp.adapter
 
-import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,12 +17,11 @@ class SearchAdapter : RecyclerView.Adapter<SearchAdapter.ImageViewHolder>() {
 
     private val differCallBack = object : DiffUtil.ItemCallback<Pexels>() {
         override fun areItemsTheSame(oldItem: Pexels, newItem: Pexels): Boolean {
-            return oldItem.id == newItem.id
+            return oldItem.url == newItem.url
         }
 
         override fun areContentsTheSame(oldItem: Pexels, newItem: Pexels): Boolean {
-            // Might throw an error....not sure
-            return oldItem.id == newItem.id
+            return oldItem == newItem
         }
     }
 

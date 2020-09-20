@@ -19,7 +19,7 @@ class PexelViewModel(
         getPhotos("red", 1, 15)
     }
 
-    fun getPhotos(query: String, page: Int, perPage: Int) = viewModelScope.launch {
+    private fun getPhotos(query: String, page: Int, perPage: Int) = viewModelScope.launch {
         searchPexels.postValue(Resource.Loading())
         val response = searchRepository.getPhotos(query, page, perPage)
         searchPexels.postValue(handleSearchPexelResponse(response))
