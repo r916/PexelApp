@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.bumptech.glide.Glide
 import com.example.pexelapp.R
 import com.example.pexelapp.model.Photo
@@ -44,7 +45,7 @@ class SearchAdapter : RecyclerView.Adapter<SearchAdapter.ImageViewHolder>() {
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
         val image = differ.currentList[position]
         holder.itemView.apply {
-            Glide.with(this).load(image.url).into(photo_iv)
+            photo_iv.load(image.url)
         }
     }
 }
